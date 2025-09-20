@@ -1,13 +1,13 @@
-# Use official Tomcat image with JDK
-FROM tomcat:9.0-jdk17
+# Use an official Tomcat image
+FROM tomcat:9.0
 
-# Remove default ROOT app
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+# Remove default webapps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy your MediMart WAR file into Tomcat as ROOT
+# Copy your WAR file to Tomcat webapps folder
 COPY PharmacyStore.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expose port 8080 (Render needs this)
+# Expose port 8080
 EXPOSE 8080
 
 # Start Tomcat

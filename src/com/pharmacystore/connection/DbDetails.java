@@ -7,7 +7,7 @@ public interface DbDetails {
 	String PASSWORD = System.getenv("DB_PASS");
 	String DBDRIVER = "com.mysql.cj.jdbc.Driver";
 
-	// fallback to local defaults if env vars not set
+	
 	
 
 	
