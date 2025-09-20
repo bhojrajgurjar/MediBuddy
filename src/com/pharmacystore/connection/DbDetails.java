@@ -1,10 +1,14 @@
 package com.pharmacystore.connection;
 
 public interface DbDetails {
-
-	String CONSTR = "jdbc:mysql://localhost:3306/"
-			+ "pharmacystoredb";
-	String USERNAME = "root";
-	String PASSWORD = "root";
+	
+	String CONSTR = System.getenv("DB_URL");
+	String USERNAME = System.getenv("DB_USER");
+	String PASSWORD = System.getenv("DB_PASS");
 	String DBDRIVER = "com.mysql.cj.jdbc.Driver";
+
+	// fallback to local defaults if env vars not set
+	
+
+	
 }
