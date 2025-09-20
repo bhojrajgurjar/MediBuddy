@@ -1,11 +1,11 @@
 <%@page import="com.pharmacystore.pojo.Product"%>
-<%@page import="com.pharmacystore.dao.ProductDAO"%>
-<%@page import="com.pharmacystore.daoimpl.ProductDAOImpl"%>
+<%@page import="com.pharmacystore.dao.ProductDao"%>
+<%@page import="com.pharmacystore.daoimpl.ProductDaoImpl"%>
 <%@page import="com.pharmacystore.daoimpl.OrderDAOImpl"%>
-<%@page import="com.pharmacystore.dao.OrderDAO"%>
+<%@page import="com.pharmacystore.dao.OrderDao"%>
 <%@page import="com.pharmacystore.pojo.Order"%>
-<%@page import="com.pharmacystore.daoimpl.UserDAOImpl"%>
-<%@page import="com.pharmacystore.dao.UserDAO"%>
+<%@page import="com.pharmacystore.daoimpl.UserDaoImpl"%>
+<%@page import="com.pharmacystore.dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%
@@ -21,13 +21,13 @@
 	int oid = Integer.parseInt(request.getParameter("orderid"));
 	
 
-	ProductDAO pdao = new ProductDAOImpl();
-	UserDAO udao = new UserDAOImpl();
-	OrderDAO odao  = new OrderDAOImpl();
+	ProductDao pdao = new ProductDaoImpl();
+	UserDao udao = new UserDaoImpl();
+	OrderDao odao  = new OrderDAOImpl();
 	Order o = new Order();
 	o.setOrderid(oid);
 	
-	int detail[] = odao.getProductDetailsFromOrderId(o);
+	int detail[] = odao.getProductDetails(o);
 	Product p = new Product();
 	p.setProductid(detail[0]);
 	int quantity = pdao.getQuantityOfProduct(p);

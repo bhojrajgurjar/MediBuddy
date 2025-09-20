@@ -1,6 +1,7 @@
-<%@page import="com.pharmacystore.model.*"%>
+<%@page import="com.pharmacystore.*"%>
 <%@page import="java.util.List"%>
 <%@page import="com.pharmacystore.dao.*"%>
+<%@page import="com.pharmacystore.pojo.*"%>
 <%@page import="com.pharmacystore.daoimpl.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -104,7 +105,7 @@ color:white;
                     <%
                             ProductDao pdao = new ProductDaoImpl();
                             int cid=30;
-                            List<Product> lst = pdao.displayProductsCategoryWise(cid);
+                            List<Product> lst = pdao.getAllProducts();
 
                             if(lst.size() > 0)
                             {
