@@ -8,15 +8,15 @@ services:
     depends_on:
       - db
     environment:
-      DB_URL: jdbc:mysql://db:3306/pharmacystoredb
+      DB_URL: jdbc:mysql://mysql.railway.internal:3306/railway
       DB_USER: root
-      DB_PASS: root
+      DB_PASS: ZQuJSPpyiHZMymdLCYFxsQiOQPBZafUv
 
   db:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: pharmacystoredb
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: railway
+      MYSQL_ROOT_PASSWORD: ZQuJSPpyiHZMymdLCYFxsQiOQPBZafUv
     ports:
       - "3306:3306"
